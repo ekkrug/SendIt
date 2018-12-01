@@ -294,7 +294,6 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     override func viewWillAppear(_ animated: Bool)
     {
         updateLabelsFieldsMain()
-        
     }
 
 

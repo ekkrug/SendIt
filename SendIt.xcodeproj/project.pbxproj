@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		36C4578921B19F4300D4BBC2 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C4578821B19F4300D4BBC2 /* HistoryTableViewCell.swift */; };
 		9A8035DD21A4DEC60039DFC3 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8035DC21A4DEC60039DFC3 /* HistoryViewController.swift */; };
 		9A8035DF21A4E0CE0039DFC3 /* RunViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8035DE21A4E0CE0039DFC3 /* RunViewController.swift */; };
 		9ADAFDD221A5FF5000BE5C5F /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9ADAFDD021A5FF5000BE5C5F /* DataModel.xcdatamodeld */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		36C4578821B19F4300D4BBC2 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		9A8035DC21A4DEC60039DFC3 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		9A8035DE21A4E0CE0039DFC3 /* RunViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunViewController.swift; sourceTree = "<group>"; };
 		9ADAFDD121A5FF5000BE5C5F /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 				9AE779E121A4DD430088BBA7 /* LaunchScreen.storyboard */,
 				9AE779E421A4DD430088BBA7 /* Info.plist */,
 				9A8035DC21A4DEC60039DFC3 /* HistoryViewController.swift */,
+				36C4578821B19F4300D4BBC2 /* HistoryTableViewCell.swift */,
 				9A8035DE21A4E0CE0039DFC3 /* RunViewController.swift */,
 				9ADAFDD021A5FF5000BE5C5F /* DataModel.xcdatamodeld */,
 			);
@@ -144,6 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36C4578921B19F4300D4BBC2 /* HistoryTableViewCell.swift in Sources */,
 				9AE779D821A4DD420088BBA7 /* MainViewController.swift in Sources */,
 				9ADAFDD221A5FF5000BE5C5F /* DataModel.xcdatamodeld in Sources */,
 				9AE779D621A4DD420088BBA7 /* AppDelegate.swift in Sources */,
