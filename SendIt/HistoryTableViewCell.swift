@@ -29,7 +29,7 @@ class HistoryTableViewCell: UITableViewCell {
             return
         }
         mountainLabel.text = "\(mountain):\(runName)"
-        dateLabel.text = "\(run.elevationChange)"
+        dateLabel.text = "\(date), \(run.elevationChange)"
     }
 
 }

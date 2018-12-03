@@ -484,25 +484,30 @@
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mountain: Run" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1AI-jO-07S">
-                                                    <rect key="frame" x="15" y="0.0" width="313" height="21"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="top" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="wO5-k7-j92">
+                                                    <rect key="frame" x="15" y="0.0" width="178" height="42"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date, Elevation Change" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wQr-jZ-R9i">
-                                                    <rect key="frame" x="15" y="22" width="178" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mountain: Run" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1AI-jO-07S">
+                                                            <rect key="frame" x="0.0" y="0.0" width="110.5" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date, Elevation Change" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wQr-jZ-R9i">
+                                                            <rect key="frame" x="0.0" y="21.5" width="178" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="dateLabel" destination="wQr-jZ-R9i" id="kik-c3-jbm"/>
                                             <outlet property="mountainLabel" destination="1AI-jO-07S" id="fhy-dF-vof"/>
+                                            <segue destination="nCg-q2-DEb" kind="show" identifier="DetailSegue" id="edT-bI-OAM"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -548,6 +553,96 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D68-IV-qU6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1004" y="-174.06296851574214"/>
+        </scene>
+        <!--History Detail View Controller-->
+        <scene sceneID="Kok-69-7Kg">
+            <objects>
+                <viewController id="nCg-q2-DEb" customClass="HistoryDetailViewController" customModule="SendIt" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YDz-8X-83c">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mountain: Run" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i0f-5f-ugq">
+                                <rect key="frame" x="16" y="36" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date, Elevation Change" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Efr-ZI-bDE">
+                                <rect key="frame" x="16" y="73" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Run Difficulty" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YEz-Dc-beO">
+                                <rect key="frame" x="16" y="110" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Time - End Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V4F-1f-5Va">
+                                <rect key="frame" x="16" y="147" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Elapsed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ay9-b8-hu7">
+                                <rect key="frame" x="16" y="184" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Pjt-IJ-VEb">
+                                <rect key="frame" x="16" y="315" width="343" height="336"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="syG-8C-iPf">
+                                <rect key="frame" x="30" y="235" width="315" height="30"/>
+                                <state key="normal" title="Back to Table"/>
+                                <connections>
+                                    <segue destination="EqQ-4D-wzn" kind="unwind" unwindAction="unwindToMainViewControllerWithUnwindSegue:" id="Bbc-dr-gw8"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Efr-ZI-bDE" firstAttribute="top" secondItem="i0f-5f-ugq" secondAttribute="bottom" constant="16" id="0Mn-IY-jqb"/>
+                            <constraint firstItem="tcM-yh-rBb" firstAttribute="trailing" secondItem="i0f-5f-ugq" secondAttribute="trailing" constant="16" id="2P5-j6-eNQ"/>
+                            <constraint firstItem="Efr-ZI-bDE" firstAttribute="leading" secondItem="tcM-yh-rBb" secondAttribute="leading" constant="16" id="GE6-z3-YTL"/>
+                            <constraint firstItem="tcM-yh-rBb" firstAttribute="trailing" secondItem="YEz-Dc-beO" secondAttribute="trailing" constant="16" id="GFb-GH-lhE"/>
+                            <constraint firstItem="i0f-5f-ugq" firstAttribute="leading" secondItem="tcM-yh-rBb" secondAttribute="leading" constant="16" id="HUO-1D-1E1"/>
+                            <constraint firstItem="YEz-Dc-beO" firstAttribute="top" secondItem="Efr-ZI-bDE" secondAttribute="bottom" constant="16" id="PUZ-mZ-Sgu"/>
+                            <constraint firstItem="V4F-1f-5Va" firstAttribute="top" secondItem="YEz-Dc-beO" secondAttribute="bottom" constant="16" id="PyJ-Yf-V2O"/>
+                            <constraint firstItem="tcM-yh-rBb" firstAttribute="bottom" secondItem="Pjt-IJ-VEb" secondAttribute="bottom" constant="16" id="Vdq-U1-LA2"/>
+                            <constraint firstItem="tcM-yh-rBb" firstAttribute="trailing" secondItem="syG-8C-iPf" secondAttribute="trailing" constant="30" id="YD6-qZ-5Ig"/>
+                            <constraint firstItem="syG-8C-iPf" firstAttribute="top" secondItem="Ay9-b8-hu7" secondAttribute="bottom" constant="30" id="a3F-qh-2ln"/>
+                            <constraint firstItem="Pjt-IJ-VEb" firstAttribute="leading" secondItem="tcM-yh-rBb" secondAttribute="leading" constant="16" id="jRS-6f-tf8"/>
+                            <constraint firstItem="syG-8C-iPf" firstAttribute="leading" secondItem="tcM-yh-rBb" secondAttribute="leading" constant="30" id="jhQ-fv-R4V"/>
+                            <constraint firstItem="tcM-yh-rBb" firstAttribute="trailing" secondItem="Ay9-b8-hu7" secondAttribute="trailing" constant="16" id="nGg-B8-Tvo"/>
+                            <constraint firstItem="Ay9-b8-hu7" firstAttribute="leading" secondItem="tcM-yh-rBb" secondAttribute="leading" constant="16" id="njI-mc-ia5"/>
+                            <constraint firstItem="tcM-yh-rBb" firstAttribute="trailing" secondItem="Pjt-IJ-VEb" secondAttribute="trailing" constant="16" id="ruY-Q9-P9a"/>
+                            <constraint firstItem="Pjt-IJ-VEb" firstAttribute="top" secondItem="syG-8C-iPf" secondAttribute="bottom" constant="50" id="rze-oW-K2F"/>
+                            <constraint firstItem="Ay9-b8-hu7" firstAttribute="top" secondItem="V4F-1f-5Va" secondAttribute="bottom" constant="16" id="s8a-v2-h65"/>
+                            <constraint firstItem="V4F-1f-5Va" firstAttribute="leading" secondItem="tcM-yh-rBb" secondAttribute="leading" constant="16" id="vJe-Ey-Qnj"/>
+                            <constraint firstItem="tcM-yh-rBb" firstAttribute="trailing" secondItem="Efr-ZI-bDE" secondAttribute="trailing" constant="16" id="ve5-6b-Z3H"/>
+                            <constraint firstItem="YEz-Dc-beO" firstAttribute="leading" secondItem="tcM-yh-rBb" secondAttribute="leading" constant="16" id="vpi-8P-GH7"/>
+                            <constraint firstItem="tcM-yh-rBb" firstAttribute="trailing" secondItem="V4F-1f-5Va" secondAttribute="trailing" constant="16" id="y5W-rh-j82"/>
+                            <constraint firstItem="i0f-5f-ugq" firstAttribute="top" secondItem="tcM-yh-rBb" secondAttribute="top" constant="16" id="yGb-Ig-ynu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="tcM-yh-rBb"/>
+                    </view>
+                    <connections>
+                        <outlet property="difficultyLabel" destination="YEz-Dc-beO" id="wUe-zO-y2A"/>
+                        <outlet property="elapsedTimeLabel" destination="Ay9-b8-hu7" id="IJt-9S-z9u"/>
+                        <outlet property="elevationChangeLabel" destination="Efr-ZI-bDE" id="ziY-AY-orD"/>
+                        <outlet property="mountainImage" destination="Pjt-IJ-VEb" id="mLQ-pY-ZBU"/>
+                        <outlet property="mountainRunLabel" destination="i0f-5f-ugq" id="j6L-YP-kDB"/>
+                        <outlet property="timeToTimeLabel" destination="V4F-1f-5Va" id="hfQ-LQ-QwH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9a8-Cn-Fqt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="EqQ-4D-wzn" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2720.8000000000002" y="186.65667166416793"/>
         </scene>
     </scenes>
 </document>
