@@ -152,6 +152,8 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         {
             print("Error saving runs: \(error)")
         }
+        let tabBar = tabBarController as! MyTabBarController
+        tabBar.runs = runs
     }
     
     func addNewRun()
@@ -288,12 +290,13 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         nextRunDifficultyTF.inputView = nextRunDifficultyPicker
         nextRunDifficultyPicker.delegate = self
         //theTextfield.inputView = thePicker
-        
     }
     
     override func viewWillAppear(_ animated: Bool)
     {
         updateLabelsFieldsMain()
+        let tabBar = tabBarController as! MyTabBarController
+        tabBar.runs = runs
     }
 
 

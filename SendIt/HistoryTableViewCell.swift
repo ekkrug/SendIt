@@ -28,8 +28,10 @@ class HistoryTableViewCell: UITableViewCell {
         guard let mountain = run.mountain, let runName = run.name, let date = run.startDateTime else {
             return
         }
+        let cellDateFormatter = DateFormatter()
+        cellDateFormatter.dateFormat = "MM/dd/yyyy"
         mountainLabel.text = "\(mountain):\(runName)"
-        dateLabel.text = "\(date), \(run.elevationChange)"
+        dateLabel.text = "Date: \(cellDateFormatter.string(from: date)), Elevation Change: \(run.elevationChange) feet"
     }
 
 }

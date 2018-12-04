@@ -33,4 +33,26 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         // Do any additional setup after loading the view, typically from a nib.
         historyTableView.reloadData()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        let tabBar = tabBarController as! MyTabBarController
+        runs = tabBar.runs
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let identifier = segue.identifier else {
+            return
+        }
+        guard identifier == "DetailSegue" else {
+            return
+        }
+        guard let historyDetailVC = segue.destination as? HistoryDetailViewController else {
+            return
+        }
+        guard let indexPath = historyTableView.indexPathForSelectedRow else {
+            return
+        }
+        let run = runs[indexPath.row]
+        historyDetailVC.run = run
+    }
 }

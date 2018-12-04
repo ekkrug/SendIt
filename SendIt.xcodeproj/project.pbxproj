@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		366D35C021B526F100CF7162 /* HistoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366D35BF21B526F100CF7162 /* HistoryDetailViewController.swift */; };
+		366D35C221B65CBC00CF7162 /* MyTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366D35C121B65CBC00CF7162 /* MyTabBarController.swift */; };
 		36C4578921B19F4300D4BBC2 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C4578821B19F4300D4BBC2 /* HistoryTableViewCell.swift */; };
 		9A8035DD21A4DEC60039DFC3 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8035DC21A4DEC60039DFC3 /* HistoryViewController.swift */; };
 		9A8035DF21A4E0CE0039DFC3 /* RunViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8035DE21A4E0CE0039DFC3 /* RunViewController.swift */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		366D35BF21B526F100CF7162 /* HistoryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDetailViewController.swift; sourceTree = "<group>"; };
+		366D35C121B65CBC00CF7162 /* MyTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabBarController.swift; sourceTree = "<group>"; };
 		36C4578821B19F4300D4BBC2 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		9A8035DC21A4DEC60039DFC3 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		9A8035DE21A4E0CE0039DFC3 /* RunViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 				9AE779D521A4DD420088BBA7 /* AppDelegate.swift */,
 				9AE779D721A4DD420088BBA7 /* MainViewController.swift */,
 				9AE779D921A4DD420088BBA7 /* Main.storyboard */,
+				366D35C121B65CBC00CF7162 /* MyTabBarController.swift */,
 				9AE779DF21A4DD430088BBA7 /* Assets.xcassets */,
 				9AE779E121A4DD430088BBA7 /* LaunchScreen.storyboard */,
 				9AE779E421A4DD430088BBA7 /* Info.plist */,
@@ -151,6 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				36C4578921B19F4300D4BBC2 /* HistoryTableViewCell.swift in Sources */,
+				366D35C221B65CBC00CF7162 /* MyTabBarController.swift in Sources */,
 				9AE779D821A4DD420088BBA7 /* MainViewController.swift in Sources */,
 				9ADAFDD221A5FF5000BE5C5F /* DataModel.xcdatamodeld in Sources */,
 				9AE779D621A4DD420088BBA7 /* AppDelegate.swift in Sources */,

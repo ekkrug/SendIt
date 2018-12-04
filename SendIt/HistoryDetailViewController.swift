@@ -15,7 +15,7 @@ class HistoryDetailViewController: UIViewController {
     @IBOutlet var mountainRunLabel: UILabel!
     @IBOutlet var elevationChangeLabel: UILabel!
     @IBOutlet var difficultyLabel: UILabel!
-    @IBOutlet var timeToTimeLabel: UILabel!
+    @IBOutlet var dateLabel: UILabel!
     @IBOutlet var elapsedTimeLabel: UILabel!
     
     // reach goal to get an image working
@@ -23,24 +23,22 @@ class HistoryDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-    
-    func displayRuns() {
         guard let validRun = run else {
             return
         }
-        mountainRunLabel.text = "\(String(describing: validRun.mountain)): \(String(describing: validRun.name))"
-        elevationChangeLabel.text = "\(validRun.elevationChange)"
-        elevationChangeLabel.text = "\(validRun.elevationChange)"
-        difficultyLabel.text = "\(String(describing: validRun.difficulty))"
-        timeToTimeLabel.text = "\(String(describing: validRun.startDateTime)) - \(String(describing: validRun.endDateTime))"
+        mountainRunLabel.text = "\(String(describing: validRun.mountain!)): \(String(describing: validRun.name!))"
+        elevationChangeLabel.text = "Elevation Change: \(validRun.elevationChange) feet"
+        difficultyLabel.text = "Difficulty: \(String(describing: validRun.difficulty!))"
+        // timeToTimeLabel.text = "\(String(describing: validRun.startDateTime!)) - \(String(describing: validRun.endDateTime!))"
         let detailDateFormatter = DateFormatter()
+        let detailTimeFormatter = DateFormatter()
         detailDateFormatter.dateFormat = "MM/dd/yyyy"
+        detailTimeFormatter.dateFormat = "HH:mm"
         if let startTime = validRun.startDateTime as Date?, let endTime = validRun.endDateTime as Date? {
-            timeToTimeLabel.text = "\(startTime) - \(endTime)"
+            dateLabel.text = "Date: \(detailDateFormatter.string(from: startTime))"
+            elapsedTimeLabel.text = "Time Duration: \(detailTimeFormatter.string(from: startTime)) - \(detailTimeFormatter.string(from: endTime))"
         }
+        // Do any additional setup after loading the view.
     }
 
     /*

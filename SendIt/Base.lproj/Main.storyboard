@@ -465,7 +465,7 @@
             </objects>
             <point key="canvasLocation" x="2720.8000000000002" y="-543.77811094452773"/>
         </scene>
-        <!--History-->
+        <!--Run History Table-->
         <scene sceneID="OnI-QK-EpL">
             <objects>
                 <viewController id="phx-sf-Pqz" customClass="HistoryViewController" customModule="SendIt" customModuleProvider="target" sceneMemberID="viewController">
@@ -474,7 +474,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MiZ-gS-S7Z">
-                                <rect key="frame" x="16" y="36" width="343" height="566"/>
+                                <rect key="frame" x="16" y="80" width="343" height="522"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RunCell" id="eTQ-x0-pYI" customClass="HistoryTableViewCell" customModule="SendIt" customModuleProvider="target">
@@ -484,25 +484,27 @@
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="top" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="wO5-k7-j92">
-                                                    <rect key="frame" x="15" y="0.0" width="178" height="42"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mountain: Run" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1AI-jO-07S">
-                                                            <rect key="frame" x="0.0" y="0.0" width="110.5" height="20.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date, Elevation Change" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wQr-jZ-R9i">
-                                                            <rect key="frame" x="0.0" y="21.5" width="178" height="20.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                </stackView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date, Elevation Change" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wQr-jZ-R9i">
+                                                    <rect key="frame" x="0.0" y="22.5" width="343" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mountain: Run" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1AI-jO-07S">
+                                                    <rect key="frame" x="0.0" y="0.0" width="343" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="wQr-jZ-R9i" secondAttribute="bottom" id="OT2-5W-ZNm"/>
+                                                <constraint firstItem="wQr-jZ-R9i" firstAttribute="leading" secondItem="Ykr-9A-X0j" secondAttribute="leading" id="U20-nJ-g7w"/>
+                                                <constraint firstItem="1AI-jO-07S" firstAttribute="top" secondItem="Ykr-9A-X0j" secondAttribute="top" id="fUj-ab-n8R"/>
+                                                <constraint firstAttribute="trailing" secondItem="wQr-jZ-R9i" secondAttribute="trailing" id="hXv-KS-h5T"/>
+                                                <constraint firstItem="1AI-jO-07S" firstAttribute="leading" secondItem="Ykr-9A-X0j" secondAttribute="leading" id="o0i-5s-eEE"/>
+                                                <constraint firstAttribute="trailing" secondItem="1AI-jO-07S" secondAttribute="trailing" id="wkg-XF-jO2"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="dateLabel" destination="wQr-jZ-R9i" id="kik-c3-jbm"/>
@@ -526,19 +528,19 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="F1B-v9-umO"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="History" id="oNT-hY-HXp"/>
+                    <navigationItem key="navigationItem" title="Run History Table" id="3FX-h1-wNe"/>
                     <connections>
                         <outlet property="historyTableView" destination="MiZ-gS-S7Z" id="PHU-XP-KzX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FEA-Rp-TNx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1941.5999999999999" y="186.65667166416793"/>
+            <point key="canvasLocation" x="2880.8000000000002" y="186.65667166416793"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--My Tab Bar Controller-->
         <scene sceneID="VE5-Yc-hjQ">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="ufV-1Y-M3P" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="ufV-1Y-M3P" customClass="MyTabBarController" customModule="SendIt" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bIE-ue-2J0">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -547,59 +549,59 @@
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="ej9-8f-Yus"/>
-                        <segue destination="phx-sf-Pqz" kind="relationship" relationship="viewControllers" id="jcD-NB-J55"/>
+                        <segue destination="ghQ-xO-JFQ" kind="relationship" relationship="viewControllers" id="jcD-NB-J55"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D68-IV-qU6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1004" y="-174.06296851574214"/>
         </scene>
-        <!--History Detail View Controller-->
+        <!--Run Details-->
         <scene sceneID="Kok-69-7Kg">
             <objects>
-                <viewController id="nCg-q2-DEb" customClass="HistoryDetailViewController" customModule="SendIt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Run Details" id="nCg-q2-DEb" customClass="HistoryDetailViewController" customModule="SendIt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YDz-8X-83c">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mountain: Run" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i0f-5f-ugq">
-                                <rect key="frame" x="16" y="36" width="343" height="21"/>
+                                <rect key="frame" x="16" y="80" width="343" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date, Elevation Change" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Efr-ZI-bDE">
-                                <rect key="frame" x="16" y="73" width="343" height="21"/>
+                                <rect key="frame" x="16" y="117" width="343" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Run Difficulty" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YEz-Dc-beO">
-                                <rect key="frame" x="16" y="110" width="343" height="21"/>
+                                <rect key="frame" x="16" y="154" width="343" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Time - End Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V4F-1f-5Va">
-                                <rect key="frame" x="16" y="147" width="343" height="21"/>
+                                <rect key="frame" x="16" y="191" width="343" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Elapsed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ay9-b8-hu7">
-                                <rect key="frame" x="16" y="184" width="343" height="21"/>
+                                <rect key="frame" x="16" y="228" width="343" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Pjt-IJ-VEb">
-                                <rect key="frame" x="16" y="315" width="343" height="336"/>
+                                <rect key="frame" x="16" y="359" width="343" height="243"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="syG-8C-iPf">
-                                <rect key="frame" x="30" y="235" width="315" height="30"/>
-                                <state key="normal" title="Back to Table"/>
+                                <rect key="frame" x="30" y="279" width="315" height="30"/>
+                                <state key="normal" title="Back to Main"/>
                                 <connections>
-                                    <segue destination="EqQ-4D-wzn" kind="unwind" unwindAction="unwindToMainViewControllerWithUnwindSegue:" id="Bbc-dr-gw8"/>
+                                    <segue destination="EqQ-4D-wzn" kind="unwind" unwindAction="unwindToMainViewControllerWithUnwindSegue:" id="41a-Pf-mzk"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -631,18 +633,37 @@
                         <viewLayoutGuide key="safeArea" id="tcM-yh-rBb"/>
                     </view>
                     <connections>
+                        <outlet property="dateLabel" destination="V4F-1f-5Va" id="hfQ-LQ-QwH"/>
                         <outlet property="difficultyLabel" destination="YEz-Dc-beO" id="wUe-zO-y2A"/>
                         <outlet property="elapsedTimeLabel" destination="Ay9-b8-hu7" id="IJt-9S-z9u"/>
                         <outlet property="elevationChangeLabel" destination="Efr-ZI-bDE" id="ziY-AY-orD"/>
                         <outlet property="mountainImage" destination="Pjt-IJ-VEb" id="mLQ-pY-ZBU"/>
                         <outlet property="mountainRunLabel" destination="i0f-5f-ugq" id="j6L-YP-kDB"/>
-                        <outlet property="timeToTimeLabel" destination="V4F-1f-5Va" id="hfQ-LQ-QwH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9a8-Cn-Fqt" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="EqQ-4D-wzn" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2720.8000000000002" y="186.65667166416793"/>
+            <point key="canvasLocation" x="3660" y="186.65667166416793"/>
+        </scene>
+        <!--History-->
+        <scene sceneID="fwp-cn-Nef">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ghQ-xO-JFQ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="History" id="oNT-hY-HXp"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="50F-5x-JdC">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="phx-sf-Pqz" kind="relationship" relationship="rootViewController" id="5YH-qG-yUA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t0k-oc-fTP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1941.5999999999999" y="186.65667166416793"/>
         </scene>
     </scenes>
 </document>
