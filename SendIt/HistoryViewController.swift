@@ -37,6 +37,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewWillAppear(_ animated: Bool) {
         let tabBar = tabBarController as! MyTabBarController
         runs = tabBar.runs
+        historyTableView.reloadData()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
