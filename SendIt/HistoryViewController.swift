@@ -16,7 +16,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet var historyTableView: UITableView!
     
     var runs = [Run]()
-    
+    var isFeet = true
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
@@ -32,7 +32,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RunCell", for: indexPath) as! HistoryTableViewCell
         let run = runs[indexPath.row]
-        cell.update(with: run)
+        cell.update(with: run, isFeet: isFeet)
         return cell
     }
     
@@ -48,7 +48,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     {
         let tabBar = tabBarController as! MyTabBarController
         runs = tabBar.runs
-        
+        isFeet = tabBar.isFeet
         historyTableView.reloadData()
     }
     
