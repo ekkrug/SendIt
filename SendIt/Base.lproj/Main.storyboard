@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ufV-1Y-M3P">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ufV-1Y-M3P">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -514,7 +514,7 @@
                                 <rect key="frame" x="16" y="80" width="343" height="522"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RunCell" id="eTQ-x0-pYI" customClass="HistoryTableViewCell" customModule="SendIt" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RunCell" id="eTQ-x0-pYI" customClass="HistoryTableViewCell" customModule="SendIt" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eTQ-x0-pYI" id="Ykr-9A-X0j">
@@ -522,14 +522,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date, Elevation Change" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wQr-jZ-R9i">
-                                                    <rect key="frame" x="0.0" y="22.5" width="343" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="0.0" y="23.5" width="343" height="20"/>
+                                                    <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mountain: Run" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1AI-jO-07S">
-                                                    <rect key="frame" x="0.0" y="0.0" width="343" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="343" height="20"/>
+                                                    <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -602,45 +602,39 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mountain: Run" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i0f-5f-ugq">
-                                <rect key="frame" x="16" y="80" width="343" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="16" y="80" width="343" height="20"/>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date, Elevation Change" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Efr-ZI-bDE">
-                                <rect key="frame" x="16" y="117" width="343" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="16" y="116" width="343" height="20"/>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Run Difficulty" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YEz-Dc-beO">
-                                <rect key="frame" x="16" y="154" width="343" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="16" y="152" width="343" height="20"/>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Time - End Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V4F-1f-5Va">
-                                <rect key="frame" x="16" y="191" width="343" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="16" y="188" width="343" height="20"/>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Elapsed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ay9-b8-hu7">
-                                <rect key="frame" x="16" y="228" width="343" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="16" y="224" width="343" height="20"/>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Pjt-IJ-VEb">
-                                <rect key="frame" x="16" y="359" width="343" height="243"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pjt-IJ-VEb">
+                                <rect key="frame" x="16" y="369" width="343" height="233"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="syG-8C-iPf">
-                                <rect key="frame" x="30" y="279" width="315" height="30"/>
-                                <state key="normal" title="Back to Main"/>
-                                <connections>
-                                    <segue destination="EqQ-4D-wzn" kind="unwind" unwindAction="unwindToMainViewControllerWithUnwindSegue:" id="41a-Pf-mzk"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -651,15 +645,8 @@
                             <constraint firstItem="i0f-5f-ugq" firstAttribute="leading" secondItem="tcM-yh-rBb" secondAttribute="leading" constant="16" id="HUO-1D-1E1"/>
                             <constraint firstItem="YEz-Dc-beO" firstAttribute="top" secondItem="Efr-ZI-bDE" secondAttribute="bottom" constant="16" id="PUZ-mZ-Sgu"/>
                             <constraint firstItem="V4F-1f-5Va" firstAttribute="top" secondItem="YEz-Dc-beO" secondAttribute="bottom" constant="16" id="PyJ-Yf-V2O"/>
-                            <constraint firstItem="tcM-yh-rBb" firstAttribute="bottom" secondItem="Pjt-IJ-VEb" secondAttribute="bottom" constant="16" id="Vdq-U1-LA2"/>
-                            <constraint firstItem="tcM-yh-rBb" firstAttribute="trailing" secondItem="syG-8C-iPf" secondAttribute="trailing" constant="30" id="YD6-qZ-5Ig"/>
-                            <constraint firstItem="syG-8C-iPf" firstAttribute="top" secondItem="Ay9-b8-hu7" secondAttribute="bottom" constant="30" id="a3F-qh-2ln"/>
-                            <constraint firstItem="Pjt-IJ-VEb" firstAttribute="leading" secondItem="tcM-yh-rBb" secondAttribute="leading" constant="16" id="jRS-6f-tf8"/>
-                            <constraint firstItem="syG-8C-iPf" firstAttribute="leading" secondItem="tcM-yh-rBb" secondAttribute="leading" constant="30" id="jhQ-fv-R4V"/>
                             <constraint firstItem="tcM-yh-rBb" firstAttribute="trailing" secondItem="Ay9-b8-hu7" secondAttribute="trailing" constant="16" id="nGg-B8-Tvo"/>
                             <constraint firstItem="Ay9-b8-hu7" firstAttribute="leading" secondItem="tcM-yh-rBb" secondAttribute="leading" constant="16" id="njI-mc-ia5"/>
-                            <constraint firstItem="tcM-yh-rBb" firstAttribute="trailing" secondItem="Pjt-IJ-VEb" secondAttribute="trailing" constant="16" id="ruY-Q9-P9a"/>
-                            <constraint firstItem="Pjt-IJ-VEb" firstAttribute="top" secondItem="syG-8C-iPf" secondAttribute="bottom" constant="50" id="rze-oW-K2F"/>
                             <constraint firstItem="Ay9-b8-hu7" firstAttribute="top" secondItem="V4F-1f-5Va" secondAttribute="bottom" constant="16" id="s8a-v2-h65"/>
                             <constraint firstItem="V4F-1f-5Va" firstAttribute="leading" secondItem="tcM-yh-rBb" secondAttribute="leading" constant="16" id="vJe-Ey-Qnj"/>
                             <constraint firstItem="tcM-yh-rBb" firstAttribute="trailing" secondItem="Efr-ZI-bDE" secondAttribute="trailing" constant="16" id="ve5-6b-Z3H"/>
@@ -679,7 +666,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9a8-Cn-Fqt" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="EqQ-4D-wzn" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3660" y="186.65667166416793"/>
         </scene>
