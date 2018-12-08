@@ -32,8 +32,10 @@ class HistoryDetailViewController: UIViewController {
         // timeToTimeLabel.text = "\(String(describing: validRun.startDateTime!)) - \(String(describing: validRun.endDateTime!))"
         let detailDateFormatter = DateFormatter()
         let detailTimeFormatter = DateFormatter()
+        detailTimeFormatter.dateStyle = .none
+        detailTimeFormatter.timeStyle = .medium
         detailDateFormatter.dateFormat = "MM/dd/yyyy"
-        detailTimeFormatter.dateFormat = "HH:mm"
+        
         if let startTime = validRun.startDateTime as Date?, let endTime = validRun.endDateTime as Date? {
             dateLabel.text = "Date: \(detailDateFormatter.string(from: startTime))"
             elapsedTimeLabel.text = "Time Duration: \(detailTimeFormatter.string(from: startTime)) - \(detailTimeFormatter.string(from: endTime))"
