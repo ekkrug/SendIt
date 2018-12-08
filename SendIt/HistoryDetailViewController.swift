@@ -13,13 +13,22 @@ import UIKit
 
 class HistoryDetailViewController: UIViewController
 {
+    @IBOutlet var mountainLabel: UILabel!
+    @IBOutlet var runNameLabel: UILabel!
+    @IBOutlet var difficultyLabel: UILabel!
+    @IBOutlet var startLabel: UILabel!
+    @IBOutlet var endLabel: UILabel!
+    @IBOutlet var timeElapsedLabel: UILabel!
+    @IBOutlet var elevationChangeLabel: UILabel!
+    
+    /*
     @IBOutlet var mountainRunLabel: UILabel!
     @IBOutlet var elevationChangeLabel: UILabel!
     @IBOutlet var difficultyLabel: UILabel!
     @IBOutlet var dateLabel: UILabel!
-    @IBOutlet var elapsedTimeLabel: UILabel!
+    @IBOutlet var elapsedTimeLabel: UILabel!*/
     @IBOutlet var mountainImage: UIImageView!
-    
+ 
     var run: Run? = nil
     var isFeet: Bool = true
     
@@ -35,7 +44,6 @@ class HistoryDetailViewController: UIViewController
         guard let validRun = run else {
             return
         }
-        mountainRunLabel.text = "\(String(describing: validRun.mountain!)): \(String(describing: validRun.name!))"
         let nF = NumberFormatter()
         nF.minimumFractionDigits = 2
         nF.maximumFractionDigits = 2
@@ -60,7 +68,7 @@ class HistoryDetailViewController: UIViewController
             }
         }
         elevationChangeLabel.text = "Elevation Change: \(elevationFinal)"
-        difficultyLabel.text = "Difficulty: \(String(describing: validRun.difficulty!))"
+        /*difficultyLabel.text = "Difficulty: \(String(describing: validRun.difficulty!))"
         let detailDateFormatter = DateFormatter()
         let detailTimeFormatter = DateFormatter()
         detailTimeFormatter.dateStyle = .none
@@ -69,6 +77,41 @@ class HistoryDetailViewController: UIViewController
         if let startTime = validRun.startDateTime as Date?, let endTime = validRun.endDateTime as Date? {
             dateLabel.text = "Date: \(detailDateFormatter.string(from: startTime))"
             elapsedTimeLabel.text = "Time Duration: \(detailTimeFormatter.string(from: startTime)) - \(detailTimeFormatter.string(from: endTime))"
+        }*/
+        
+        if let mountain = validRun.mountain
+        {
+            mountainLabel.text = "Mountain: \(mountain)"
+        }
+        
+        if let run = validRun.name
+        {
+            runNameLabel.text = "Run: \(run)"
+        }
+        
+        if let difficulty = validRun.difficulty
+        {
+            difficultyLabel.text = "Difficulty: \(difficulty)"
+        }
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .medium
+        dateFormatter.locale = Locale(identifier: "en_US")
+        
+        if let start = validRun.startDateTime
+        {
+            startLabel.text = "Start: \(dateFormatter.string(from: start))"
+        }
+        
+        if let end = validRun.endDateTime
+        {
+            endLabel.text = "End: \(dateFormatter.string(from: end))"
+        }
+        
+        if let timeElapsed = validRun.timeElapsed
+        {
+            timeElapsedLabel.text = "Time Elapsed: \(timeElapsed)"
         }
         
         if let imageFileName = validRun.imageFileName
