@@ -1,46 +1,60 @@
 //
 //  HistoryViewController.swift
 //  SendIt
+//  This file implements the HistoryViewController class.
+//  CPSC 315-01, Fall 2018
+//  Project
 //
-//  Created by Eugene Krug on 11/20/18.
-//  Copyright © 2018 SendIt. All rights reserved.
+//  Published by Eugene Krug and Kevin Mattappally on 12/12/18.
+//  Copyright © 2018 Eugene Krug and Kevin Mattappally. All rights reserved.
 //
 
 import UIKit
 
-class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
-    var runs = [Run]()
+class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource
+{
     @IBOutlet var historyTableView: UITableView!
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
+    var runs = [Run]()
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
+        if section == 0
+        {
             return runs.count
         }
         return 0
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RunCell", for: indexPath) as! HistoryTableViewCell
         let run = runs[indexPath.row]
         cell.update(with: run)
-        // cell.showsReorderControl = true
         return cell
     }
     
-    override func viewDidLoad() {
+    
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         historyTableView.reloadData()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    
+    override func viewWillAppear(_ animated: Bool)
+    {
         let tabBar = tabBarController as! MyTabBarController
         runs = tabBar.runs
+        
         historyTableView.reloadData()
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
         guard let identifier = segue.identifier else {
             return
         }

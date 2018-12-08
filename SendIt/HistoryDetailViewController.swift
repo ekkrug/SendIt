@@ -1,27 +1,30 @@
 //
 //  HistoryDetailViewController.swift
 //  SendIt
+//  This file implements the HistoryDetailViewController class.
+//  CPSC 315-01, Fall 2018
+//  Project
 //
-//  Created by Kevin Mattappally on 12/3/18.
-//  Copyright © 2018 SendIt. All rights reserved.
+//  Published by Eugene Krug and Kevin Mattappally on 12/12/18.
+//  Copyright © 2018 Eugene Krug and Kevin Mattappally. All rights reserved.
 //
 
 import UIKit
 
-class HistoryDetailViewController: UIViewController {
-
-    var run: Run? = nil
-    
+class HistoryDetailViewController: UIViewController
+{
     @IBOutlet var mountainRunLabel: UILabel!
     @IBOutlet var elevationChangeLabel: UILabel!
     @IBOutlet var difficultyLabel: UILabel!
     @IBOutlet var dateLabel: UILabel!
     @IBOutlet var elapsedTimeLabel: UILabel!
-    
-    // reach goal to get an image working
     @IBOutlet var mountainImage: UIImageView!
     
-    override func viewDidLoad() {
+    var run: Run? = nil
+    
+    
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         guard let validRun = run else {
             return
@@ -49,17 +52,5 @@ class HistoryDetailViewController: UIViewController {
             
             mountainImage.image = UIImage(contentsOfFile: fileURL.path)
         }
-        // Do any additional setup after loading the view.
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

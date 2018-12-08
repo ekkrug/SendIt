@@ -1,9 +1,12 @@
 //
 //  RunViewController.swift
 //  SendIt
+//  This file implements the RunViewController class.
+//  CPSC 315-01, Fall 2018
+//  Project
 //
-//  Created by Eugene Krug on 11/20/18.
-//  Copyright © 2018 SendIt. All rights reserved.
+//  Published by Eugene Krug and Kevin Mattappally on 12/12/18.
+//  Copyright © 2018 Eugene Krug and Kevin Mattappally. All rights reserved.
 //
 
 import UIKit
@@ -12,46 +15,17 @@ import CoreMotion
 
 class RunViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate
 {
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    
-    var altitudeManager = CMAltimeter()
-    var curRelAltMeters = NSNumber()
-    
-    var curRunMountainPicker = UIPickerView()
-    var curRunDifficultyPicker = UIPickerView()
-    
-    var curRunMountainPickerData = [String]()
-    let curRunDifficultyPickerData = ["Easiest", "Intermediate", "Advanced", "Expert Only"]
-    
-    var startDateTime = Date()
-    var mountainInit = String()
-    var runNameInit = String()
-    var difficultyInit = String()
-    
-    var finishDateTime: Date? = nil
-    
-    
-    
-    
     @IBOutlet weak var mountainTF: UITextField!
-    
     @IBOutlet weak var runNameTF: UITextField!
-    
     @IBOutlet weak var difficultyTF: UITextField!
-    
     @IBOutlet weak var startLabel: UILabel!
-    
     @IBOutlet weak var finishLabel: UILabel!
-    
-    
     @IBOutlet weak var cancelButton: UIButton!
-    
     @IBOutlet weak var saveButton: UIButton!
-    
     @IBOutlet weak var imageView: UIImageView!
     
-    
-    @IBAction func backgroundTapped(_ sender: UITapGestureRecognizer) {
+    @IBAction func backgroundTapped(_ sender: UITapGestureRecognizer)
+    {
         self.view.endEditing(true)
     }
     
@@ -69,7 +43,6 @@ class RunViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
             finishLabel.text = "Finish: \(dateFormatter.string(from: finishDateTime))"
         }
     }
-    
     
     @IBAction func addAPhotoButtonPressed(_ sender: UIButton)
     {
@@ -102,20 +75,38 @@ class RunViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         present(alertController, animated: true, completion: nil)
     }
     
+    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
+    var altitudeManager = CMAltimeter()
+    var curRelAltMeters = NSNumber()
+    
+    var curRunDifficultyPicker = UIPickerView()
+    let curRunDifficultyPickerData = ["Easiest", "Intermediate", "Advanced", "Expert Only"]
+    
+    var startDateTime = Date()
+    var mountainInit = String()
+    var runNameInit = String()
+    var difficultyInit = String()
+    
+    var finishDateTime: Date? = nil
+    
+    
     /**
      Tells the delegate that the user picked a still image or movie.
      Parameters:
      - picker: a UIImagePickerController
      - info: a dictionary of UIIMagePickerController.InfoKey and Any types
      */
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any])
+    {
         if let selectedImage =
             info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             imageView?.image = selectedImage
             dismiss(animated: true, completion: nil)
-            
         }
     }
+    
     
     /**
      writeImage()​ is called when the user presses save and their new trip has an image.
@@ -144,19 +135,15 @@ class RunViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     }
     
     
-    
     func numberOfComponents(in pickerView: UIPickerView) -> Int
     {
         return 1
     }
     
+    
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int
     {
-        if pickerView == curRunMountainPicker
-        {
-            return curRunMountainPickerData.count
-        }
-        else if pickerView == curRunDifficultyPicker
+        if pickerView == curRunDifficultyPicker
         {
             return curRunDifficultyPickerData.count
         }
@@ -166,12 +153,10 @@ class RunViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         }
     }
     
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        if pickerView == curRunMountainPicker
-        {
-            return curRunMountainPickerData[row]
-        }
-        else if pickerView == curRunDifficultyPicker
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?
+    {
+        if pickerView == curRunDifficultyPicker
         {
             return curRunDifficultyPickerData[row]
         }
@@ -182,14 +167,9 @@ class RunViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     }
     
   
-    
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if pickerView == curRunMountainPicker
-        {
-            return mountainTF.text = curRunMountainPickerData[row]
-        }
-        else if pickerView == curRunDifficultyPicker
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
+    {
+        if pickerView == curRunDifficultyPicker
         {
             return difficultyTF.text = curRunDifficultyPickerData[row]
         }
@@ -219,45 +199,25 @@ class RunViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
                 newRun.endDateTime = Date(timeIntervalSinceNow: 0)
             }
             
-            
-            
-            
             altitudeManager.stopRelativeAltitudeUpdates()
             
             
-            //let curRelAltMetersDbl = curRelAltMeters.doubleValue
-            //let curRelAltFeetDbl = curRelAltMetersDbl * 3.281
+            let curRelAltFeetDbl = Conversion.metersToFeet(inMeters: Double(truncating: curRelAltMeters))
+            newRun.elevationChange = 12 //curRelAltFeetDbl // forcing to have "data" when using simulator
             
-            let nF = NumberFormatter()
-            nF.minimumFractionDigits = 2
-            nF.maximumFractionDigits = 2
-            
-            let curRelAltFeetDbl = Double(truncating: curRelAltMeters) * 3.281
-            let curRelAltFeetNSNum = NSNumber(value: curRelAltFeetDbl)
-            
-            if let elevationChangeStr = nF.string(from: curRelAltFeetNSNum)
+
+            if let startDateTime = newRun.startDateTime
             {
-                if let elevationChangeDbl = Double(elevationChangeStr)
+                if let tI = newRun.endDateTime?.timeIntervalSince(startDateTime)
                 {
-                    newRun.elevationChange = 12
-                    //elevationChangeDbl
-                    //TODO
+                    let dCF = DateComponentsFormatter()
+                    dCF.unitsStyle = .abbreviated
+                    newRun.timeElapsed = dCF.string(from: tI)
                 }
             }
             
-            //let bal = Double(nF.string(from: curRelAltMeters))
             
-            
-          
-            
-            //newRun.elevationChange = 10.0
-
-            
-            let tI = newRun.endDateTime!.timeIntervalSince(newRun.startDateTime!) // TODO
-            let dCF = DateComponentsFormatter()
-            dCF.unitsStyle = .abbreviated
-            newRun.timeElapsed = dCF.string(from: tI)
-            
+    
             if let image = imageView?.image
             {
                 newRun.imageFileName = writeImage(image: image)
@@ -269,86 +229,29 @@ class RunViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
 
             
             destVC.self.runs.append(newRun)
-            
-            if let mountain = mountainTF.text
-            {
-                if !destVC.nextRunMountainPickerData.contains(mountain)
-                {
-                    destVC.nextRunMountainPickerData.append(mountain)
-                    destVC.nextRunMountainPickerData.sort()
-                }
-            }
-            
-           
         }
-        
     }
     
-    /*
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-     {
-     let destVC = segue.destination as! TripTableViewController
-     
-     
-     if sender as AnyObject? === saveButton
-     {
-     let dateFormatter = DateFormatter()
-     dateFormatter.dateFormat = "MM/dd/yyyy"
-     
-     // It is okay to force unwrap here because this function to prepare for segue
-     // is only called if all the user's input has been validated. The logic to
-     // validate the user's input occurs in the function shouldPerformSegue, which
-     // returns true or false if it is okay to perform the segue (this function).
-     //let newTrip = Trip(destinationName: destinationTF.text!, startDate: dateFormatter.date(from: startDateTF.text!)!, endDate: dateFormatter.date(from: endDateTF.text!)!, imageFileName: nil)
-     // TODO
-     let newTrip = Trip(context: self.context)
-     newTrip.destinationName = destinationTF.text!
-     newTrip.startDate = dateFormatter.date(from: startDateTF.text!)!
-     newTrip.endDate = dateFormatter.date(from: endDateTF.text!)!
-     
-     
-     if let image = imageView?.image
-     {
-     newTrip.imageFileName = writeImage(image: image)
-     }
-     else
-     {
-     newTrip.imageFileName = nil
-     }
-     
-     
-     
-     destVC.self.trips.append(newTrip)
-     
-     //destVC.trips.append(newTrip)
-     }
-     }
-    */
-    
-    
-    
-   
-    
-    
-    override func viewDidLoad() {
+
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
-        
+
         startDateTime = Date(timeIntervalSinceNow: 0)
         
-        if CMAltimeter.isRelativeAltitudeAvailable() {
+        if CMAltimeter.isRelativeAltitudeAvailable()
+        {
             altitudeManager.startRelativeAltitudeUpdates(to: OperationQueue.main) { (data, error) in
                 if let curAltitude = data?.relativeAltitude
                 {
                     self.curRelAltMeters = curAltitude
                 }
-                // TODO handle
             }
 
-        } else {
-            print("Your iphone doesn't have a barometer :(.")
-            // TODO: better way to handle?
+        }
+        else
+        {
+            print("Your iphone doesn't have a barometer.")
         }
         
         
@@ -362,9 +265,6 @@ class RunViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         runNameTF.text = runNameInit
         difficultyTF.text = difficultyInit
         
-        curRunMountainPicker = UIPickerView()
-        //mountainTF.inputView = curRunMountainPicker
-        curRunMountainPicker.delegate = self
         
         curRunDifficultyPicker = UIPickerView()
         difficultyTF.inputView = curRunDifficultyPicker

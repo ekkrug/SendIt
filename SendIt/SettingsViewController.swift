@@ -1,15 +1,33 @@
 //
 //  SettingsViewController.swift
 //  SendIt
+//  This file implements the SettingsViewController class.
+//  CPSC 315-01, Fall 2018
+//  Project
 //
-//  Created by Eugene Krug on 12/8/18.
-//  Copyright © 2018 SendIt. All rights reserved.
+//  Published by Eugene Krug and Kevin Mattappally on 12/12/18.
+//  Copyright © 2018 Eugene Krug and Kevin Mattappally. All rights reserved.
 //
 
 import UIKit
 
-class SettingsViewController: UIViewController {
-
+class SettingsViewController: UIViewController
+{
+    @IBAction func feetMetersValueChanged(_ sender: UISegmentedControl)
+    {
+        let index = sender.selectedSegmentIndex
+        
+        if index == 0 // feet
+        {
+            isFeet = true
+        }
+        else // meters
+        {
+            isFeet = false
+        }
+    }
+    
+    
     var isFeet = true
     {
         didSet
@@ -19,42 +37,9 @@ class SettingsViewController: UIViewController {
         }
     }
     
-    @IBAction func feetMetersValueChanged(_ sender: UISegmentedControl)
+    
+    override func viewDidLoad()
     {
-        let index = sender.selectedSegmentIndex
-        
-        if index == 0 // feet
-        {
-            isFeet = true
-            print("feet")
-        }
-        else // meters
-        {
-            isFeet = false
-            print("meters")
-        }
-    }
-    
-    
-    
-   
-    
-    
-    override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

@@ -1,9 +1,12 @@
 //
 //  Conversion.swift
 //  SendIt
+//  This file implements the Conversion struct.
+//  CPSC 315-01, Fall 2018
+//  Project
 //
-//  Created by Eugene Krug on 12/8/18.
-//  Copyright © 2018 SendIt. All rights reserved.
+//  Published by Eugene Krug and Kevin Mattappally on 12/12/18.
+//  Copyright © 2018 Eugene Krug and Kevin Mattappally. All rights reserved.
 //
 
 import Foundation

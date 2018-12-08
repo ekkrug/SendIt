@@ -1,41 +1,25 @@
 //
 //  MyTabBarController.swift
 //  SendIt
+//  This file implements the MyTabBarController class.
+//  CPSC 315-01, Fall 2018
+//  Project
 //
-//  Created by Kevin Mattappally on 12/3/18.
-//  Copyright © 2018 SendIt. All rights reserved.
+//  Published by Eugene Krug and Kevin Mattappally on 12/12/18.
+//  Copyright © 2018 Eugene Krug and Kevin Mattappally. All rights reserved.
 //
 
 import UIKit
 
-class MyTabBarController: UITabBarController {
-
+class MyTabBarController: UITabBarController
+{
     var runs: [Run] = []
     
     var isFeet = true
+    
+    
+    override func viewDidLoad()
     {
-        didSet
-        {
-            print("did set to: \(isFeet)")
-        }
-    }
-    
-    
-    override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

@@ -1,30 +1,36 @@
 //
 //  HistoryTableViewCell.swift
 //  SendIt
+//  This file implements the HistoryViewController class.
+//  CPSC 315-01, Fall 2018
+//  Project
 //
-//  Created by Kevin Mattappally on 11/30/18.
-//  Copyright © 2018 SendIt. All rights reserved.
+//  Published by Eugene Krug and Kevin Mattappally on 12/12/18.
+//  Copyright © 2018 Eugene Krug and Kevin Mattappally. All rights reserved.
 //
 
 import UIKit
 
-class HistoryTableViewCell: UITableViewCell {
-
+class HistoryTableViewCell: UITableViewCell
+{
     @IBOutlet var mountainLabel: UILabel!
     @IBOutlet var dateLabel: UILabel!
     
-    override func awakeFromNib() {
+    
+    override func awakeFromNib()
+    {
         super.awakeFromNib()
-        // Initialization code
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
+    
+    override func setSelected(_ selected: Bool, animated: Bool)
+    {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
-    func update(with run: Run) {
+    
+    func update(with run: Run)
+    {
         guard let mountain = run.mountain, let runName = run.name, let date = run.startDateTime else {
             return
         }
@@ -33,5 +39,4 @@ class HistoryTableViewCell: UITableViewCell {
         mountainLabel.text = "\(mountain): \(runName)"
         dateLabel.text = "Date: \(cellDateFormatter.string(from: date)), Elevation Change: \(run.elevationChange) feet"
     }
-
 }
