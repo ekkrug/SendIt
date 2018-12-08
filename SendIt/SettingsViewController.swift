@@ -1,24 +1,43 @@
 //
-//  MyTabBarController.swift
+//  SettingsViewController.swift
 //  SendIt
 //
-//  Created by Kevin Mattappally on 12/3/18.
+//  Created by Eugene Krug on 12/8/18.
 //  Copyright © 2018 SendIt. All rights reserved.
 //
 
 import UIKit
 
-class MyTabBarController: UITabBarController {
+class SettingsViewController: UIViewController {
 
-    var runs: [Run] = []
-    
     var isFeet = true
     {
         didSet
         {
-            print("did set to: \(isFeet)")
+            let tabBar = tabBarController as! MyTabBarController
+            tabBar.isFeet = isFeet
         }
     }
+    
+    @IBAction func feetMetersValueChanged(_ sender: UISegmentedControl)
+    {
+        let index = sender.selectedSegmentIndex
+        
+        if index == 0 // feet
+        {
+            isFeet = true
+            print("feet")
+        }
+        else // meters
+        {
+            isFeet = false
+            print("meters")
+        }
+    }
+    
+    
+    
+   
     
     
     override func viewDidLoad() {

@@ -17,6 +17,8 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     var nextRunMountainPickerData = [String]()
     let nextRunDifficultyPickerData = ["Easiest", "Intermediate", "Advanced", "Expert Only"]
     
+    var isFeet = true
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int
     {
         return 1
@@ -216,8 +218,17 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
                 }
                
                 
+                if isFeet
+                {
+                    elevationChangeLabel.text = "Elevation Change: \(lastRun.elevationChange) feet"
+                }
+                else
+                {
+                    let elevationChangeMeters = Conversion.feetToMeters(inFeet: lastRun.elevationChange)
+                    elevationChangeLabel.text = "Elevation Change: \(elevationChangeMeters) meters"
+                }
                 
-                elevationChangeLabel.text = "Elevation Change: \(lastRun.elevationChange) feet"
+                
         }
     }
     
@@ -294,9 +305,13 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     
     override func viewWillAppear(_ animated: Bool)
     {
-        updateLabelsFieldsMain()
         let tabBar = tabBarController as! MyTabBarController
         tabBar.runs = runs
+        isFeet = tabBar.isFeet
+        print("FEROM Main VC IS FEET: \(isFeet)")
+        updateLabelsFieldsMain()
+        
+        
     }
 
 

@@ -239,7 +239,9 @@ class RunViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
             {
                 if let elevationChangeDbl = Double(elevationChangeStr)
                 {
-                    newRun.elevationChange = elevationChangeDbl
+                    newRun.elevationChange = 12
+                    //elevationChangeDbl
+                    //TODO
                 }
             }
             
