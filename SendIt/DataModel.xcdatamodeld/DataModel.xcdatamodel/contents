@@ -4,12 +4,13 @@
         <attribute name="difficulty" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="elevationChange" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="endDateTime" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="imageFileName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="mountain" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="startDateTime" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="timeElapsed" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Run" positionX="-27" positionY="18" width="128" height="150"/>
+        <element name="Run" positionX="-27" positionY="18" width="128" height="165"/>
     </elements>
 </model>

@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 import CoreMotion
 
-class RunViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource 
+class RunViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate
 {
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
@@ -28,6 +28,8 @@ class RunViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     var runNameInit = String()
     var difficultyInit = String()
     
+    var finishDateTime: Date? = nil
+    
     
     
     
@@ -39,14 +41,107 @@ class RunViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     
     @IBOutlet weak var startLabel: UILabel!
     
+    @IBOutlet weak var finishLabel: UILabel!
+    
+    
     @IBOutlet weak var cancelButton: UIButton!
     
-    @IBOutlet weak var finishButton: UIButton!
+    @IBOutlet weak var saveButton: UIButton!
+    
+    @IBOutlet weak var imageView: UIImageView!
+    
     
     @IBAction func backgroundTapped(_ sender: UITapGestureRecognizer) {
         self.view.endEditing(true)
     }
     
+    @IBAction func recordFinishButtonPressed(_ sender: UIButton)
+    {
+        finishDateTime = Date(timeIntervalSinceNow: 0)
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .medium
+        dateFormatter.locale = Locale(identifier: "en_US")
+        
+        if let finishDateTime = finishDateTime
+        {
+            finishLabel.text = "Finish: \(dateFormatter.string(from: finishDateTime))"
+        }
+    }
+    
+    
+    @IBAction func addAPhotoButtonPressed(_ sender: UIButton)
+    {
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        
+        let alertController = UIAlertController(title: "Choose Image Source", message: nil, preferredStyle: .actionSheet)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alertController.addAction(cancelAction)
+        
+        // Check if camera is a source type available
+        if UIImagePickerController.isSourceTypeAvailable(.camera)
+        {
+            let cameraAction = UIAlertAction(title: "Camera", style: .default, handler: { action in imagePicker.sourceType = .camera
+                self.present(imagePicker, animated: true, completion: nil)
+            })
+            alertController.addAction(cameraAction)
+        }
+        
+        // Check if the photo library is a source type available
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary)
+        {
+            let photoLibraryAction = UIAlertAction(title: "Photo Library", style: .default, handler: { action in imagePicker.sourceType = .photoLibrary
+                self.present(imagePicker, animated: true, completion: nil)
+            })
+            alertController.addAction(photoLibraryAction)
+        }
+        
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    /**
+     Tells the delegate that the user picked a still image or movie.
+     Parameters:
+     - picker: a UIImagePickerController
+     - info: a dictionary of UIIMagePickerController.InfoKey and Any types
+     */
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let selectedImage =
+            info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            imageView?.image = selectedImage
+            dismiss(animated: true, completion: nil)
+            
+        }
+    }
+    
+    /**
+     writeImage()​ is called when the user presses save and their new trip has an image.
+     Saves the user’s trip image as a JPEG file.
+     - Parameter image: a UIImage
+     - Returns: a String containing the filename
+     */
+    func writeImage(image: UIImage) -> String
+    {
+        let filename = "\(UUID().uuidString)"
+        
+        let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        let fileURL = documentsDirectory.appendingPathComponent(filename).appendingPathExtension("jpeg")
+        let dataInstanceOfImag = image.jpegData(compressionQuality: 0.5)
+        
+        
+        do
+        {
+            try dataInstanceOfImag?.write(to: fileURL)
+        }
+        catch
+        {
+            print("Error writing the data instance")
+        }
+        return filename
+    }
     
     
     
@@ -106,7 +201,7 @@ class RunViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     {
         let destVC = segue.destination as! MainViewController
         
-        if sender as AnyObject? === finishButton
+        if sender as AnyObject? === saveButton
         {
             let newRun = Run(context: self.context)
             
@@ -114,8 +209,21 @@ class RunViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
             newRun.name = runNameTF.text
             newRun.difficulty = difficultyTF.text
             newRun.startDateTime = startDateTime
-            newRun.endDateTime = Date(timeIntervalSinceNow: 0)
+            
+            if let endDateTime = finishDateTime
+            {
+                newRun.endDateTime = endDateTime
+            }
+            else
+            {
+                newRun.endDateTime = Date(timeIntervalSinceNow: 0)
+            }
+            
+            
+            
+            
             altitudeManager.stopRelativeAltitudeUpdates()
+            
             
             //let curRelAltMetersDbl = curRelAltMeters.doubleValue
             //let curRelAltFeetDbl = curRelAltMetersDbl * 3.281
@@ -148,7 +256,14 @@ class RunViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
             dCF.unitsStyle = .abbreviated
             newRun.timeElapsed = dCF.string(from: tI)
             
-            
+            if let image = imageView?.image
+            {
+                newRun.imageFileName = writeImage(image: image)
+            }
+            else
+            {
+                newRun.imageFileName = nil
+            }
 
             
             destVC.self.runs.append(newRun)

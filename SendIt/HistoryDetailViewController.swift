@@ -38,6 +38,15 @@ class HistoryDetailViewController: UIViewController {
             dateLabel.text = "Date: \(detailDateFormatter.string(from: startTime))"
             elapsedTimeLabel.text = "Time Duration: \(detailTimeFormatter.string(from: startTime)) - \(detailTimeFormatter.string(from: endTime))"
         }
+        
+        if let imageFileName = validRun.imageFileName
+        {
+            let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+            
+            let fileURL = documentsDirectory.appendingPathComponent(imageFileName).appendingPathExtension("jpeg")
+            
+            mountainImage.image = UIImage(contentsOfFile: fileURL.path)
+        }
         // Do any additional setup after loading the view.
     }
 
