@@ -92,6 +92,7 @@ class RunViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     var finishDateTime: Date? = nil
     
     
+    
     /**
      Tells the delegate that the user picked a still image or movie.
      Parameters:
@@ -175,7 +176,7 @@ class RunViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         }
       
     }
- 
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
@@ -232,7 +233,7 @@ class RunViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         }
     }
     
-
+  
     override func viewDidLoad()
     {
         super.viewDidLoad()

@@ -8,6 +8,9 @@
 //  Published by Eugene Krug and Kevin Mattappally on 12/12/18.
 //  Copyright © 2018 Eugene Krug and Kevin Mattappally. All rights reserved.
 //
+//  Citation: App icon from https://www.flaticon.com licensed by http://creativecommons.org/licenses/by/3.0/
+//  Citation: Tab bar icons ("glyphs") used under open source from https://icons8.com
+//
 
 import UIKit
 import CoreData
@@ -27,7 +30,6 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     @IBOutlet weak var nextRunDifficultyTF: UITextField!
     @IBOutlet weak var nextRunNameLabel: UILabel!
     @IBOutlet weak var nextRunNameTF: UITextField!
-    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
     @IBAction func unwindToMainViewController(unwindSegue: UIStoryboardSegue)
     {
