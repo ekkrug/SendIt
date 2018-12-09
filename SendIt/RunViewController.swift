@@ -203,7 +203,7 @@ class RunViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
             
             
             let curRelAltFeetDbl = Conversion.metersToFeet(inMeters: Double(truncating: curRelAltMeters))
-            newRun.elevationChange = 12 //curRelAltFeetDbl // forcing to have "data" when using simulator
+            newRun.elevationChange = curRelAltFeetDbl
             
 
             if let startDateTime = newRun.startDateTime
