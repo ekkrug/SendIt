@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ufV-1Y-M3P">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ufV-1Y-M3P">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -607,64 +607,121 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="8XT-hO-mtQ">
-                                <rect key="frame" x="16" y="80" width="343" height="164"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Pjt-IJ-VEb">
+                                <rect key="frame" x="16" y="381" width="343" height="221"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Pjt-IJ-VEb" secondAttribute="height" multiplier="343:221" id="sun-oZ-cdI"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="2oZ-zX-lW3" userLabel="SV: Labels">
+                                <rect key="frame" x="16" y="80" width="343" height="201"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mountain: Run" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i0f-5f-ugq">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="20"/>
-                                        <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tzn-9g-dkB">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="24"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Mountain:">
+                                                <attributes>
+                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <font key="NSFont" size="20" name="DINAlternate-Bold"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date, Elevation Change" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Efr-ZI-bDE">
-                                        <rect key="frame" x="0.0" y="36" width="343" height="20"/>
-                                        <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JF7-bx-CxO">
+                                        <rect key="frame" x="0.0" y="30" width="343" height="23.5"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Name:">
+                                                <attributes>
+                                                    <font key="NSFont" size="20" name="DINAlternate-Bold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Run Difficulty" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YEz-Dc-beO">
-                                        <rect key="frame" x="0.0" y="72" width="343" height="20"/>
-                                        <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eLG-PT-oyF">
+                                        <rect key="frame" x="0.0" y="59.5" width="343" height="23.5"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Difficulty:">
+                                                <attributes>
+                                                    <font key="NSFont" size="20" name="DINAlternate-Bold"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Time - End Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V4F-1f-5Va">
-                                        <rect key="frame" x="0.0" y="108" width="343" height="20"/>
-                                        <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R4W-6M-wWK">
+                                        <rect key="frame" x="0.0" y="89" width="343" height="23.5"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Start:">
+                                                <attributes>
+                                                    <font key="NSFont" size="20" name="DINAlternate-Bold"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Elapsed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ay9-b8-hu7">
-                                        <rect key="frame" x="0.0" y="144" width="343" height="20"/>
-                                        <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cz5-hp-0aI">
+                                        <rect key="frame" x="0.0" y="118.5" width="343" height="23.5"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="End:">
+                                                <attributes>
+                                                    <font key="NSFont" size="20" name="DINAlternate-Bold"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3cd-PY-YpM">
+                                        <rect key="frame" x="0.0" y="148" width="343" height="23.5"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Time Elapsed:">
+                                                <attributes>
+                                                    <font key="NSFont" size="20" name="DINAlternate-Bold"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yq1-25-dsU">
+                                        <rect key="frame" x="0.0" y="177.5" width="343" height="23.5"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Elevation Change:">
+                                                <attributes>
+                                                    <font key="NSFont" size="20" name="DINAlternate-Bold"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Pjt-IJ-VEb">
-                                <rect key="frame" x="16" y="394" width="343" height="208"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="tcM-yh-rBb" firstAttribute="bottom" secondItem="Pjt-IJ-VEb" secondAttribute="bottom" constant="16" id="76M-fh-Kud"/>
-                            <constraint firstItem="tcM-yh-rBb" firstAttribute="trailing" secondItem="8XT-hO-mtQ" secondAttribute="trailing" constant="16" id="Aej-yP-vBS"/>
-                            <constraint firstItem="Pjt-IJ-VEb" firstAttribute="top" secondItem="8XT-hO-mtQ" secondAttribute="bottom" constant="150" id="Qoy-Iq-yWk"/>
+                            <constraint firstItem="Pjt-IJ-VEb" firstAttribute="top" secondItem="2oZ-zX-lW3" secondAttribute="bottom" constant="100" id="7XZ-eh-GOk"/>
+                            <constraint firstItem="tcM-yh-rBb" firstAttribute="trailing" secondItem="2oZ-zX-lW3" secondAttribute="trailing" constant="16" id="9sW-b0-qDJ"/>
+                            <constraint firstItem="tcM-yh-rBb" firstAttribute="bottom" secondItem="Pjt-IJ-VEb" secondAttribute="bottom" constant="16" id="E9s-KN-W9z"/>
+                            <constraint firstItem="2oZ-zX-lW3" firstAttribute="leading" secondItem="tcM-yh-rBb" secondAttribute="leading" constant="16" id="Xt2-dT-Z7k"/>
+                            <constraint firstItem="2oZ-zX-lW3" firstAttribute="top" secondItem="tcM-yh-rBb" secondAttribute="top" constant="16" id="jBl-ZS-SNV"/>
+                            <constraint firstItem="tcM-yh-rBb" firstAttribute="trailing" secondItem="Pjt-IJ-VEb" secondAttribute="trailing" constant="16" id="jRY-9f-uDi"/>
                             <constraint firstItem="Pjt-IJ-VEb" firstAttribute="leading" secondItem="tcM-yh-rBb" secondAttribute="leading" constant="16" id="kHm-Ja-jUv"/>
-                            <constraint firstItem="8XT-hO-mtQ" firstAttribute="leading" secondItem="tcM-yh-rBb" secondAttribute="leading" constant="16" id="qcU-kD-MMl"/>
-                            <constraint firstItem="8XT-hO-mtQ" firstAttribute="top" secondItem="tcM-yh-rBb" secondAttribute="top" constant="16" id="viR-e1-ew1"/>
+                            <constraint firstItem="Pjt-IJ-VEb" firstAttribute="leading" secondItem="tcM-yh-rBb" secondAttribute="leading" constant="16" id="o9g-lD-1Cs"/>
                             <constraint firstItem="tcM-yh-rBb" firstAttribute="trailing" secondItem="Pjt-IJ-VEb" secondAttribute="trailing" constant="16" id="xdp-73-Fsc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tcM-yh-rBb"/>
                     </view>
                     <connections>
-                        <outlet property="dateLabel" destination="V4F-1f-5Va" id="hfQ-LQ-QwH"/>
-                        <outlet property="difficultyLabel" destination="YEz-Dc-beO" id="wUe-zO-y2A"/>
-                        <outlet property="elapsedTimeLabel" destination="Ay9-b8-hu7" id="IJt-9S-z9u"/>
-                        <outlet property="elevationChangeLabel" destination="Efr-ZI-bDE" id="ziY-AY-orD"/>
+                        <outlet property="difficultyLabel" destination="eLG-PT-oyF" id="JXX-fI-m7O"/>
+                        <outlet property="elevationChangeLabel" destination="yq1-25-dsU" id="xzT-Ub-CZN"/>
+                        <outlet property="endLabel" destination="Cz5-hp-0aI" id="w3Q-Ex-HsD"/>
                         <outlet property="mountainImage" destination="Pjt-IJ-VEb" id="mLQ-pY-ZBU"/>
-                        <outlet property="mountainRunLabel" destination="i0f-5f-ugq" id="j6L-YP-kDB"/>
+                        <outlet property="mountainLabel" destination="Tzn-9g-dkB" id="7Ui-Ss-vyd"/>
+                        <outlet property="runNameLabel" destination="JF7-bx-CxO" id="gPp-dj-qJq"/>
+                        <outlet property="startLabel" destination="R4W-6M-wWK" id="OIk-rY-0iI"/>
+                        <outlet property="timeElapsedLabel" destination="3cd-PY-YpM" id="zXw-6e-dbU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9a8-Cn-Fqt" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -698,17 +755,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="qOa-7Y-5zH">
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="qOa-7Y-5zH">
                                 <rect key="frame" x="16" y="80" width="343" height="28"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Units for elevation:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e4t-Pl-Pte">
-                                        <rect key="frame" x="0.0" y="0.0" width="184" height="28"/>
+                                        <rect key="frame" x="0.0" y="2" width="156.5" height="24"/>
                                         <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="BjA-Ik-f4v">
-                                        <rect key="frame" x="204" y="0.0" width="139" height="29"/>
+                                        <rect key="frame" x="176.5" y="0.0" width="166.5" height="29"/>
                                         <segments>
                                             <segment title="Feet"/>
                                             <segment title="Meters"/>
@@ -722,10 +779,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="5k8-Mz-eyX" firstAttribute="bottom" secondItem="qOa-7Y-5zH" secondAttribute="bottom" constant="680" id="PSr-iS-TDE"/>
-                            <constraint firstItem="5k8-Mz-eyX" firstAttribute="trailing" secondItem="qOa-7Y-5zH" secondAttribute="trailing" constant="16" id="gUG-46-7Re"/>
-                            <constraint firstItem="qOa-7Y-5zH" firstAttribute="leading" secondItem="5k8-Mz-eyX" secondAttribute="leading" constant="16" id="lh4-ec-Sa8"/>
-                            <constraint firstItem="qOa-7Y-5zH" firstAttribute="top" secondItem="5k8-Mz-eyX" secondAttribute="top" constant="16" id="n06-fo-K2d"/>
+                            <constraint firstItem="qOa-7Y-5zH" firstAttribute="top" secondItem="5k8-Mz-eyX" secondAttribute="top" constant="16" id="4rd-hg-Bfh"/>
+                            <constraint firstItem="5k8-Mz-eyX" firstAttribute="bottom" secondItem="qOa-7Y-5zH" secondAttribute="bottom" constant="680" id="ApA-dK-oSO"/>
+                            <constraint firstItem="5k8-Mz-eyX" firstAttribute="trailing" secondItem="qOa-7Y-5zH" secondAttribute="trailing" constant="16" id="S8Z-9K-OZa"/>
+                            <constraint firstItem="qOa-7Y-5zH" firstAttribute="leading" secondItem="5k8-Mz-eyX" secondAttribute="leading" constant="16" id="dLs-Ct-Xyr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5k8-Mz-eyX"/>
                     </view>

@@ -20,13 +20,6 @@ class HistoryDetailViewController: UIViewController
     @IBOutlet var endLabel: UILabel!
     @IBOutlet var timeElapsedLabel: UILabel!
     @IBOutlet var elevationChangeLabel: UILabel!
-    
-    /*
-    @IBOutlet var mountainRunLabel: UILabel!
-    @IBOutlet var elevationChangeLabel: UILabel!
-    @IBOutlet var difficultyLabel: UILabel!
-    @IBOutlet var dateLabel: UILabel!
-    @IBOutlet var elapsedTimeLabel: UILabel!*/
     @IBOutlet var mountainImage: UIImageView!
  
     var run: Run? = nil
@@ -40,6 +33,8 @@ class HistoryDetailViewController: UIViewController
         updateView()
     }
     
+    
+    
     func updateView() {
         guard let validRun = run else {
             return
@@ -48,7 +43,8 @@ class HistoryDetailViewController: UIViewController
         nF.minimumFractionDigits = 2
         nF.maximumFractionDigits = 2
         var elevationFinal: String = ""
-        if isFeet {
+        if isFeet
+        {
             let eCFeetNSNum = NSNumber(value: validRun.elevationChange)
             if let eCFeetDisp = nF.string(from: eCFeetNSNum) {
                 elevationFinal = "\(eCFeetDisp) feet"
@@ -68,17 +64,6 @@ class HistoryDetailViewController: UIViewController
             }
         }
         elevationChangeLabel.text = "Elevation Change: \(elevationFinal)"
-        /*difficultyLabel.text = "Difficulty: \(String(describing: validRun.difficulty!))"
-        let detailDateFormatter = DateFormatter()
-        let detailTimeFormatter = DateFormatter()
-        detailTimeFormatter.dateStyle = .none
-        detailTimeFormatter.timeStyle = .medium
-        detailDateFormatter.dateFormat = "MM/dd/yyyy"
-        if let startTime = validRun.startDateTime as Date?, let endTime = validRun.endDateTime as Date? {
-            dateLabel.text = "Date: \(detailDateFormatter.string(from: startTime))"
-            elapsedTimeLabel.text = "Time Duration: \(detailTimeFormatter.string(from: startTime)) - \(detailTimeFormatter.string(from: endTime))"
-        }*/
-        
         if let mountain = validRun.mountain
         {
             mountainLabel.text = "Mountain: \(mountain)"
@@ -98,7 +83,6 @@ class HistoryDetailViewController: UIViewController
         dateFormatter.dateStyle = .medium
         dateFormatter.timeStyle = .medium
         dateFormatter.locale = Locale(identifier: "en_US")
-        
         if let start = validRun.startDateTime
         {
             startLabel.text = "Start: \(dateFormatter.string(from: start))"
