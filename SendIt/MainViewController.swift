@@ -27,6 +27,7 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     @IBOutlet weak var nextRunDifficultyTF: UITextField!
     @IBOutlet weak var nextRunNameLabel: UILabel!
     @IBOutlet weak var nextRunNameTF: UITextField!
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
     @IBAction func unwindToMainViewController(unwindSegue: UIStoryboardSegue)
     {

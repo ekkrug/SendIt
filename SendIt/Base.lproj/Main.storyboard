@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ufV-1Y-M3P">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ufV-1Y-M3P">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -250,6 +250,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" id="G89-NS-vF6"/>
                     <connections>
+                        <outlet property="bottomConstraint" destination="jWL-6W-4qi" id="K99-vq-Ofg"/>
                         <outlet property="difficultyLabel" destination="RlL-qk-0Oz" id="PoM-ZJ-Hnz"/>
                         <outlet property="elevationChangeLabel" destination="fm3-Nj-7E8" id="FPX-fA-dBI"/>
                         <outlet property="endLabel" destination="cve-3g-hk2" id="Q0L-Cg-WOZ"/>
@@ -747,7 +748,7 @@
         <scene sceneID="gXI-Us-QmE">
             <objects>
                 <viewController id="BAo-HK-kju" customClass="SettingsViewController" customModule="SendIt" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="FLF-dy-I65">
+                    <view key="view" contentMode="scaleToFill" id="FLF-dy-I65">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -755,7 +756,7 @@
                                 <rect key="frame" x="16" y="80" width="343" height="28"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Units for elevation:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e4t-Pl-Pte">
-                                        <rect key="frame" x="0.0" y="2" width="156.5" height="24"/>
+                                        <rect key="frame" x="0.0" y="2.5" width="156.5" height="23.5"/>
                                         <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -776,7 +777,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="qOa-7Y-5zH" firstAttribute="top" secondItem="5k8-Mz-eyX" secondAttribute="top" constant="16" id="4rd-hg-Bfh"/>
-                            <constraint firstItem="5k8-Mz-eyX" firstAttribute="bottom" secondItem="qOa-7Y-5zH" secondAttribute="bottom" constant="680" id="ApA-dK-oSO"/>
                             <constraint firstItem="5k8-Mz-eyX" firstAttribute="trailing" secondItem="qOa-7Y-5zH" secondAttribute="trailing" constant="16" id="S8Z-9K-OZa"/>
                             <constraint firstItem="qOa-7Y-5zH" firstAttribute="leading" secondItem="5k8-Mz-eyX" secondAttribute="leading" constant="16" id="dLs-Ct-Xyr"/>
                         </constraints>
