@@ -607,106 +607,105 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="2oZ-zX-lW3" userLabel="SV: Labels">
-                                <rect key="frame" x="16" y="80" width="343" height="293"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="2oZ-zX-lW3" userLabel="SV: master">
+                                <rect key="frame" x="16" y="80" width="343" height="522"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tzn-9g-dkB">
-                                        <rect key="frame" x="0.0" y="0.0" width="83" height="36.5"/>
-                                        <attributedString key="attributedText">
-                                            <fragment content="Mountain:">
-                                                <attributes>
-                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                    <font key="NSFont" size="20" name="DINAlternate-Bold"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JF7-bx-CxO">
-                                        <rect key="frame" x="0.0" y="42.5" width="56" height="37"/>
-                                        <attributedString key="attributedText">
-                                            <fragment content="Name:">
-                                                <attributes>
-                                                    <font key="NSFont" size="20" name="DINAlternate-Bold"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eLG-PT-oyF">
-                                        <rect key="frame" x="0.0" y="85.5" width="77" height="36.5"/>
-                                        <attributedString key="attributedText">
-                                            <fragment content="Difficulty:">
-                                                <attributes>
-                                                    <font key="NSFont" size="20" name="DINAlternate-Bold"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R4W-6M-wWK">
-                                        <rect key="frame" x="0.0" y="128" width="45.5" height="37"/>
-                                        <attributedString key="attributedText">
-                                            <fragment content="Start:">
-                                                <attributes>
-                                                    <font key="NSFont" size="20" name="DINAlternate-Bold"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cz5-hp-0aI">
-                                        <rect key="frame" x="0.0" y="171" width="37.5" height="36.5"/>
-                                        <attributedString key="attributedText">
-                                            <fragment content="End:">
-                                                <attributes>
-                                                    <font key="NSFont" size="20" name="DINAlternate-Bold"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3cd-PY-YpM">
-                                        <rect key="frame" x="0.0" y="213.5" width="118" height="37"/>
-                                        <attributedString key="attributedText">
-                                            <fragment content="Time Elapsed:">
-                                                <attributes>
-                                                    <font key="NSFont" size="20" name="DINAlternate-Bold"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yq1-25-dsU">
-                                        <rect key="frame" x="0.0" y="256.5" width="149" height="36.5"/>
-                                        <attributedString key="attributedText">
-                                            <fragment content="Elevation Change:">
-                                                <attributes>
-                                                    <font key="NSFont" size="20" name="DINAlternate-Bold"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="K5g-LK-kgj" userLabel="SV: labels">
+                                        <rect key="frame" x="0.0" y="0.0" width="149" height="281"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tzn-9g-dkB">
+                                                <rect key="frame" x="0.0" y="0.0" width="83" height="36"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Mountain:">
+                                                        <attributes>
+                                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                            <font key="NSFont" size="20" name="DINAlternate-Bold"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JF7-bx-CxO">
+                                                <rect key="frame" x="0.0" y="41" width="56" height="35.5"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Name:">
+                                                        <attributes>
+                                                            <font key="NSFont" size="20" name="DINAlternate-Bold"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eLG-PT-oyF">
+                                                <rect key="frame" x="0.0" y="81.5" width="77" height="36"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Difficulty:">
+                                                        <attributes>
+                                                            <font key="NSFont" size="20" name="DINAlternate-Bold"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R4W-6M-wWK">
+                                                <rect key="frame" x="0.0" y="122.5" width="45.5" height="36"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Start:">
+                                                        <attributes>
+                                                            <font key="NSFont" size="20" name="DINAlternate-Bold"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cz5-hp-0aI">
+                                                <rect key="frame" x="0.0" y="163.5" width="37.5" height="36"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="End:">
+                                                        <attributes>
+                                                            <font key="NSFont" size="20" name="DINAlternate-Bold"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3cd-PY-YpM">
+                                                <rect key="frame" x="0.0" y="204.5" width="118" height="35.5"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Time Elapsed:">
+                                                        <attributes>
+                                                            <font key="NSFont" size="20" name="DINAlternate-Bold"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yq1-25-dsU">
+                                                <rect key="frame" x="0.0" y="245" width="149" height="36"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Elevation Change:">
+                                                        <attributes>
+                                                            <font key="NSFont" size="20" name="DINAlternate-Bold"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Pjt-IJ-VEb">
+                                        <rect key="frame" x="0.0" y="301" width="343" height="221"/>
+                                    </imageView>
                                 </subviews>
                             </stackView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Pjt-IJ-VEb">
-                                <rect key="frame" x="16" y="381" width="343" height="221"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="Pjt-IJ-VEb" secondAttribute="height" multiplier="343:221" id="sun-oZ-cdI"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="2oZ-zX-lW3" firstAttribute="top" secondItem="tcM-yh-rBb" secondAttribute="top" constant="16" id="5Fo-ot-mZ4"/>
-                            <constraint firstAttribute="trailing" secondItem="Pjt-IJ-VEb" secondAttribute="trailing" constant="16" id="FeM-i7-Ll2"/>
-                            <constraint firstItem="tcM-yh-rBb" firstAttribute="bottom" secondItem="Pjt-IJ-VEb" secondAttribute="bottom" constant="16" id="Gw5-Eh-5Hb"/>
-                            <constraint firstItem="2oZ-zX-lW3" firstAttribute="leading" secondItem="tcM-yh-rBb" secondAttribute="leading" constant="16" id="OAr-4x-Z9r"/>
-                            <constraint firstItem="Pjt-IJ-VEb" firstAttribute="leading" secondItem="YDz-8X-83c" secondAttribute="leading" constant="16" id="WJ8-ft-Kef"/>
-                            <constraint firstItem="Pjt-IJ-VEb" firstAttribute="top" secondItem="2oZ-zX-lW3" secondAttribute="bottom" constant="8" symbolic="YES" id="gPF-cG-tAa"/>
-                            <constraint firstItem="tcM-yh-rBb" firstAttribute="trailing" secondItem="2oZ-zX-lW3" secondAttribute="trailing" constant="16" id="idz-l5-Vi4"/>
+                            <constraint firstItem="2oZ-zX-lW3" firstAttribute="top" secondItem="tcM-yh-rBb" secondAttribute="top" constant="16" id="0Hz-cn-qKF"/>
+                            <constraint firstItem="2oZ-zX-lW3" firstAttribute="leading" secondItem="tcM-yh-rBb" secondAttribute="leading" constant="16" id="0W8-0o-reO"/>
+                            <constraint firstItem="tcM-yh-rBb" firstAttribute="bottom" secondItem="2oZ-zX-lW3" secondAttribute="bottom" constant="16" id="6HB-fc-sCC"/>
+                            <constraint firstItem="tcM-yh-rBb" firstAttribute="trailing" secondItem="2oZ-zX-lW3" secondAttribute="trailing" constant="16" id="ab2-TF-eaR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tcM-yh-rBb"/>
                     </view>
